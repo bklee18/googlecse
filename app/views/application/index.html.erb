@@ -1,1 +1,6 @@
-Hello world!
+<h1>Brian's Custom Search for rubyonrails.org!</h1>
+
+<%= form_for @query do |f| %>
+  <%= f.label :term, "Search Term:" %>
+  <%= f.text_field :term %>
+<% end %>
