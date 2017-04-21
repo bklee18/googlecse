@@ -1,3 +1,16 @@
 <h1>Results</h1>
 
-<%= @query.term %>
+<ol>
+  <%= @results[:items].each do |item| %>
+    <li>
+      <h4><a href=<%= item[:link] %>><%= item[:title] %></a></h4>
+      <span><%= item[:link] %></span>
+      <br />
+      <div>
+        <p text-overflow="ellipsis">
+          <%= item[:snippet] %>
+        </p>
+      </div>
+    </li>
+  <% end %>
+</ol>
