@@ -1,16 +1,21 @@
-<h3 class="show-title">Results</h3>
-
+<h4 class="show-title">Results</h4>
 <ol>
-  <%= @results[:items].each do |item| %>
-    <li>
-      <h4><a href=<%= item[:link] %>><%= item[:title] %></a></h4>
-      <span><%= item[:link] %></span>
-      <br />
-      <div>
-        <p text-overflow="ellipsis">
-          <%= item[:snippet] %>
-        </p>
+  <% if @query.results["items"].nil? %>
+    <div class="container">
+      There were no matching results for <em><%= @query.term %></em>.
+    </div>
+  <% else %>
+    <% @query.results["items"].each do |item| %>
+      <div class="container">
+        <li>
+          <h4><a href=<%= item["link"] %>><%= item["title"] %></a></h4>
+          <span style="color: green;"><%= item["link"] %></span>
+          <br />
+            <p>
+              <%= item["snippet"] %>
+            </p>
+        </li>
       </div>
-    </li>
+    <% end %>
   <% end %>
 </ol>
