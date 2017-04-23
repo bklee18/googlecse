@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title GoogleCSE
+    = csrf_meta_tags
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .page-header
+      %h1{:style => "text-align: center;padding-bottom: .5em;border-bottom: solid;"}
+        = image_tag "rails.png", style: "display:inline-block;"
+        Brian's Custom Search for RubyOnRails.org
+    = yield

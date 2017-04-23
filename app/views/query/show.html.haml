@@ -1,0 +1,19 @@
+= render "shared/search"
+%h4.show-title Results
+%ol
+  - if @query.results["items"].nil?
+    .container
+      There were no matching results for
+      = succeed "." do
+        %em= @query.term
+  - else
+    - @query.results["items"].each do |item|
+      .container
+        %li
+          %h4
+            %a{:href => "<haml_loud"}
+              item["link"] &gt;#{item["title"]}
+          %span{:style => "color: green;"}= item["link"]
+          %br/
+          %p
+            = item["snippet"]
