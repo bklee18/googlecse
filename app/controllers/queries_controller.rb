@@ -11,8 +11,4 @@ class QueriesController < ApplicationController
     render "query/show"
   end
 
-  # def index
-  #   # binding.pry
-  #   redirect_to root_url
-  # end
 end
